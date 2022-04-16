@@ -1,0 +1,17 @@
+{
+  "name": "routine-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "wadakenji <info@wadakenji.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.46",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  }
+}
