@@ -11,7 +11,14 @@
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "gas-webpack-plugin": "^2.2.1",
     "prettier": "^2.6.2",
-    "typescript": "^4.6.3"
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0"
   }
 }
