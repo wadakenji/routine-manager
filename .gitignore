@@ -3,3 +3,5 @@
 src/appsscript.json
 
 /node_modules
+
+/.dist
