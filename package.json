@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "push": "yarn build && cp ./src/appsscript.json ./.dist/appsscript.json && clasp push"
+    "push": "yarn build && cp ./src/appsscript.json ./.dist/appsscript.json && clasp push",
+    "deploy": "yarn push && DEPLOYMENT_ID=`clasp deployments | grep \"fixedURL\" | cut -d \" \" -f 2` && clasp deploy -i $DEPLOYMENT_ID -d \"fixedURL\""
   },
   "devDependencies": {
     "@types/google-apps-script": "^1.0.46",
