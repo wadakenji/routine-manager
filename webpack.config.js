@@ -16,7 +16,12 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: [{ loader: 'ts-loader' }],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-typescript'],
+          },
+        },
       },
     ],
   },

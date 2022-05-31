@@ -10,15 +10,18 @@
     "deploy": "yarn push && DEPLOYMENT_ID=`clasp deployments | grep \"fixedURL\" | cut -d \" \" -f 2` && clasp deploy -i $DEPLOYMENT_ID -d \"fixedURL\""
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
     "@types/google-apps-script": "^1.0.46",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
+    "babel-loader": "^8.2.5",
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "gas-webpack-plugin": "^2.2.1",
     "prettier": "^2.6.2",
-    "ts-loader": "^9.3.0",
     "typescript": "^4.6.3",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
