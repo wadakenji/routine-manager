@@ -7,7 +7,8 @@
   "scripts": {
     "build": "webpack",
     "push": "yarn build && cp ./src/appsscript.json ./.dist/appsscript.json && clasp push",
-    "deploy": "yarn push && DEPLOYMENT_ID=`clasp deployments | grep \"fixedURL\" | cut -d \" \" -f 2` && clasp deploy -i $DEPLOYMENT_ID -d \"fixedURL\""
+    "deploy": "yarn push && DEPLOYMENT_ID=`clasp deployments | grep \"fixedURL\" | cut -d \" \" -f 2` && clasp deploy -i $DEPLOYMENT_ID -d \"fixedURL\"",
+    "lint": "eslint --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
