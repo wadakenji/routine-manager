@@ -10,6 +10,9 @@
     "deploy": "yarn push && DEPLOYMENT_ID=`clasp deployments | grep \"fixedURL\" | cut -d \" \" -f 2` && clasp deploy -i $DEPLOYMENT_ID -d \"fixedURL\"",
     "lint": "eslint --fix"
   },
+  "simple-git-hooks": {
+    "pre-push": "yarn lint && yarn deploy"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
