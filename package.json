@@ -23,6 +23,7 @@
     "eslint-plugin-import": "^2.26.0",
     "gas-webpack-plugin": "^2.2.1",
     "prettier": "^2.6.2",
+    "simple-git-hooks": "^2.8.0",
     "typescript": "^4.6.3",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
