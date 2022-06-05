@@ -9,9 +9,7 @@ export const recordToText = ({
   awakening,
   weight,
   fatPercentage,
-  eating,
   steps,
-  walking,
   running,
   hiit,
   training,
@@ -25,9 +23,7 @@ export const recordToText = ({
   (awakening ? `寝起き：${awakening}\n` : '') +
   (weight ? `体重：${weight}\n` : '') +
   (fatPercentage ? `体脂肪率：${fatPercentage}\n` : '') +
-  (eating ? `食生活：${eating}\n` : '') +
   (steps ? `歩数：${steps}\n` : '') +
-  (walking ? `散歩：${walking}\n` : '') +
   (running ? `ランニング：${running}\n` : '') +
   (hiit ? `HIIT：${hiit}\n` : '') +
   (training ? `筋トレ：${training}\n` : '') +

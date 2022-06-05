@@ -14,9 +14,7 @@ type DailyRecord = {
   awakening: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
   weight: number
   fatPercentage: number
-  eating: string
   steps: number
-  walking: boolean
   running: boolean
   training: boolean | 'ジム' | '家'
   hiit: boolean
