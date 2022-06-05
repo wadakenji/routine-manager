@@ -1,23 +1,38 @@
 import isValid from 'date-fns/isValid'
 
 /** 記録をポストするテキストに変換する */
-export const recordToText = (record: DailyRecordInSheet) => `
-天気：${record.weather}
-起床時間：${record.getUpTime}
-就寝時間：${record.goToBedTime}
-気分：${record.feeling}
-寝起き：${record.awakening}
-体重：${record.weight}
-体脂肪率：${record.fatPercentage}
-食生活：${record.eating}
-歩数：${record.steps}
-散歩：${record.walking}
-ランニング：${record.running}
-HIIT：${record.hiit}
-筋トレ：${record.training}
-瞑想：${record.meditation}
-ストレッチ：${record.stretch}
-`
+export const recordToText = ({
+  weather,
+  getUpTime,
+  goToBedTime,
+  feeling,
+  awakening,
+  weight,
+  fatPercentage,
+  eating,
+  steps,
+  walking,
+  running,
+  hiit,
+  training,
+  meditation,
+  stretch,
+}: DailyRecordInSheet) =>
+  (weather ? `天気：${weather}\n` : '') +
+  (getUpTime ? `起床時間：${getUpTime}\n` : '') +
+  (goToBedTime ? `就寝時間：${goToBedTime}\n` : '') +
+  (feeling ? `気分：${feeling}\n` : '') +
+  (awakening ? `寝起き：${awakening}\n` : '') +
+  (weight ? `体重：${weight}\n` : '') +
+  (fatPercentage ? `体脂肪率：${fatPercentage}\n` : '') +
+  (eating ? `食生活：${eating}\n` : '') +
+  (steps ? `歩数：${steps}\n` : '') +
+  (walking ? `散歩：${walking}\n` : '') +
+  (running ? `ランニング：${running}\n` : '') +
+  (hiit ? `HIIT：${hiit}\n` : '') +
+  (training ? `筋トレ：${training}\n` : '') +
+  (meditation ? `瞑想：${meditation}\n` : '') +
+  (stretch ? `ストレッチ：${stretch}\n` : '')
 
 /** JSONとして送られてきた記録を入力用のオブジェクトに変換する */
 export const recordJsonToInput = (json: DailyRecordInJson): DailyRecordInput =>
