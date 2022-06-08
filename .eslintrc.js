@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     semi: 'off',
     'no-undef': 'off',
+    'no-unused-vars': 'off',
     'import/extensions': ['error', { ts: 'never' }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
