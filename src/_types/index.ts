@@ -8,6 +8,7 @@ type YmString = `${YearString}-${MonthString}`
 /** 1日分の記録オブジェクト */
 type DailyRecord = {
   weather: string
+  temperature: number
   getUpTime: Date
   goToBedTime: Date
   feeling: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
@@ -16,9 +17,9 @@ type DailyRecord = {
   fatPercentage: number
   steps: number
   running: boolean
-  training: boolean | 'ジム' | '家'
+  training: boolean
   hiit: boolean
-  meditation: boolean | number
+  meditation: number
   stretch: boolean
 }
 /** JSONで表現した場合（日付型がないのでstringに置き換えている） */
