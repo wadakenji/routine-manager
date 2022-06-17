@@ -13,6 +13,11 @@ type DailyRecord = {
   goToBedTime: Date
   feeling: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
   awakening: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+  ateThreeMealsRegularly: boolean
+  didNotEatTooMuch: boolean
+  didNotEatTooLate: boolean
+  goodNutritionalBalance: boolean
+  ateWithSomeone: boolean
   weight: number
   fatPercentage: number
   steps: number
@@ -21,6 +26,8 @@ type DailyRecord = {
   hiit: boolean
   meditation: number
   stretch: boolean
+  bathing: boolean
+  comment: string
 }
 /** JSONで表現した場合（日付型がないのでstringに置き換えている） */
 type DailyRecordInJson = Partial<{
