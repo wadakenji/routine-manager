@@ -22,5 +22,6 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'implicit-arrow-linebreak': 'off',
     'comma-dangle': 'off',
+    'object-curly-newline': 'off',
   },
 }
