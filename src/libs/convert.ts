@@ -51,12 +51,13 @@ const recordToAdvice = ({
   ateThreeMealsRegularly,
   didNotEatTooMuch,
   didNotEatTooLate,
+  goodNutritionalBalance,
+  ateWithSomeone,
   weather,
   steps,
   hiit,
   training,
   running,
-  goodNutritionalBalance,
   bathing,
   stretch,
   meditation,
@@ -71,8 +72,8 @@ const recordToAdvice = ({
   if (!goToBedTime || format(goToBedTime, 'HH:mm') > '23:00') {
     level1.push('早く寝よう')
   }
-  // 基本的な食生活をクリアする
-  if (!ateThreeMealsRegularly || !didNotEatTooMuch || !didNotEatTooLate) {
+  // 基本的な食生活をクリアする（誰かと食べたときは条件がゆるくなる）
+  if (!ateThreeMealsRegularly || (!ateWithSomeone && (!didNotEatTooMuch || !didNotEatTooLate))) {
     level1.push('食生活に気をつけよう')
   }
   // 散歩する
