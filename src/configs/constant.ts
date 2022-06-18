@@ -25,7 +25,7 @@ export const RECORD_ITEM_TEXT_JA: { [k in keyof DailyRecordInSheet]: string } = 
 }
 
 /** emoji用テキスト */
-export const EMOJI: Record<string, `:${string}:`> = {
+export const EMOJI = {
   SUNNY: ':sunny:',
   CLOUDY: ':cloud:',
   RAINY: ':umbrella_with_rain_drops:',
