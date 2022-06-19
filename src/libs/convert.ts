@@ -46,6 +46,7 @@ const stepsToEmoji = (steps: DailyRecordInSheet['steps']) => {
 
 /** 記録から評価コメントを算出する */
 const recordToAdvice = ({
+  date,
   getUpTime,
   goToBedTime,
   ateThreeMealsRegularly,
@@ -69,7 +70,11 @@ const recordToAdvice = ({
     level1.push('決まった時間に起きよう')
   }
   // 23時までに寝る
-  if (!goToBedTime || format(goToBedTime, 'HH:mm') > '23:00') {
+  if (
+    !goToBedTime ||
+    format(goToBedTime, 'YYYYMMdd') > format(date, 'YYYYMMdd') ||
+    format(goToBedTime, 'HH:mm') > '23:00'
+  ) {
     level1.push('早く寝よう')
   }
   // 基本的な食生活をクリアする（誰かと食べたときは条件がゆるくなる）
