@@ -72,7 +72,7 @@ const recordToAdvice = ({
   // 23時までに寝る
   if (
     !goToBedTime ||
-    format(goToBedTime, 'YYYYMMdd') > format(date, 'YYYYMMdd') ||
+    format(goToBedTime, 'yyyyMMdd') > format(date, 'yyyyMMdd') ||
     format(goToBedTime, 'HH:mm') > '23:00'
   ) {
     level1.push('早く寝よう')
