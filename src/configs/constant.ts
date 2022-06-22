@@ -2,6 +2,10 @@
 export const ROUTINE_SPREADSHEET_ID =
   PropertiesService.getScriptProperties().getProperty('ROUTINE_SPREADSHEET_ID') || ''
 
+/** 記録管理のスプレッドシートID */
+export const TRAINING_SPREADSHEET_ID =
+  PropertiesService.getScriptProperties().getProperty('TRAINING_SPREADSHEET_ID') || ''
+
 /** ポストするSlackのwebhook URL */
 export const SLACK_HOOK_URL = PropertiesService.getScriptProperties().getProperty('SLACK_HOOK_URL') || ''
 
