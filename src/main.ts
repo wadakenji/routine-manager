@@ -1,4 +1,4 @@
-import { getRecord, updateRecord } from './libs/spreadsheet'
+import { getRecord, updateRecord } from './libs/spreadsheet/routine'
 import { recordJsonToInput, recordToText } from './libs/convert'
 import { postSlackMessage } from './libs/slack'
 

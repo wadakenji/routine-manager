@@ -1,5 +1,5 @@
-import { ROUTINE_SPREADSHEET_ID } from '../configs/constant'
-import { allDatesOfYm, dateToYm } from '../utils/date'
+import { ROUTINE_SPREADSHEET_ID } from '../../configs/constant'
+import { allDatesOfYm, dateToYm } from '../../utils/date'
 
 type Sheet = GoogleAppsScript.Spreadsheet.Sheet
 
