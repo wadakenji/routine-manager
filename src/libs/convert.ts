@@ -63,6 +63,9 @@ const recordToAdvice = ({
   stretch,
   meditation,
 }: DailyRecordInSheet) => {
+  // 総評コメント レベル1がクリアできなかったとき
+  let conclusion: string = `${EMOJI.NO_MOUTH} あせらずひとつずつ ${EMOJI.NO_MOUTH}`
+
   // レベル1（まずクリアするべき課題に対するアドバイス）
   const level1: string[] = []
   // 9時より前に起床する
@@ -87,36 +90,49 @@ const recordToAdvice = ({
   }
 
   // レベル1のアドバイスが1つでもあればそれのみを表示する
-  if (level1.length > 0) return level1
+  if (level1.length > 0) return { advice: level1, conclusion }
+
+  // レベル1をクリアしたときの総評
+  conclusion = `${EMOJI.SMILE} いい日だったね これを続けよう ${EMOJI.SMILE}`
 
   // レベル2（レベル1が全てクリアできてからクリアするべき課題に対するアドバイス）
-  const level2: string[] = [`いい日だったね これを続けよう ${EMOJI.THUMBS_UP}`]
+  const level2: string[] = []
   // 強度の高い運動をする
   if (!hiit && !training && !running) {
     level2.push('強度の高い運動もしてみよう')
-  }
-  // 良好な栄養バランスの食事をする
-  if (!goodNutritionalBalance) {
-    level2.push('栄養バランスにも気を遣ってみよう')
-  }
-  // 入浴する
-  if (!bathing) {
-    level2.push('入浴すると体にいいらしい')
   }
   // ストレッチをする
   if (!stretch) {
     level2.push('ストレッチしてリラックスするとよく寝れそう')
   }
+
+  // レベル2のアドバイスがあればそれのみを表示する
+  if (level2.length > 0) return { advice: level2, conclusion }
+
+  // レベル2をクリアしたときの総評
+  conclusion = `${EMOJI.GRINNING} 人生は前に進んでいる ${EMOJI.GRINNING}`
+
+  // レベル3（レベル2が全てクリアできてからクリアするべき課題に対するアドバイス）
+  const level3: string[] = []
+  // 良好な栄養バランスの食事をする
+  if (!goodNutritionalBalance) {
+    level3.push('栄養バランスにも気を遣ってみよう')
+  }
+  // 入浴する
+  if (!bathing) {
+    level3.push('入浴すると体にいいらしい')
+  }
   // 瞑想をする
   if (!meditation) {
-    level2.push('瞑想をすると集中力が上がるらしい')
+    level3.push('瞑想をすると集中力が上がるらしい')
   }
 
-  // レベル2のアドバイスがあれば表示する
-  if (level2.length > 1) return level2
+  // レベル3のアドバイスがあればそれのみを表示する
+  if (level3.length > 0) return { advice: level3, conclusion }
 
   // すべてクリアできれば最高の1日
-  return [`最高の1日だ ${EMOJI.SOB}`]
+  conclusion = `${EMOJI.SOB} *最高の1日だ* ${EMOJI.SOB}`
+  return { advice: [], conclusion }
 }
 
 /** 記録をポストするテキストに変換する */
@@ -182,9 +198,9 @@ export const recordToText = (record: DailyRecordInSheet) => {
   const commentSection = comment && ['*【ひとこと】*', comment].join('\n')
 
   // 評価コメントの段落
-  const adviseSection = recordToAdvice(record)
-    .map(str => `*★★★ ${str}*`)
-    .join('\n')
+  const { advice, conclusion } = recordToAdvice(record)
+  const adviceText = advice.map(a => `*${EMOJI.BULB} ${a}*`).join('\n')
+  const adviceSection = [adviceText, adviceText && '\n\n\n', conclusion].join('')
 
   return [
     dateSection,
@@ -200,7 +216,7 @@ export const recordToText = (record: DailyRecordInSheet) => {
     commentSection ? '\n\n\n' : '',
     commentSection || '',
     '\n\n\n\n',
-    adviseSection,
+    adviceSection,
   ].join('')
 }
 
