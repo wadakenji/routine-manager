@@ -26,6 +26,9 @@ export const EMOJI = {
   SEAL: ':seal:',
   MEDITATION: ':man_in_lotus_position:',
   BATHING: ':bath:',
-  THUMBS_UP: ':thumbsup:',
+  BULB: ':bulb:',
+  NO_MOUTH: ':no_mouth:',
+  SMILE: ':slightly_smiling_face:',
+  GRINNING: 'grinning',
   SOB: ':sob:',
 }
