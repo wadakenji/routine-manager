@@ -29,6 +29,6 @@ export const EMOJI = {
   BULB: ':bulb:',
   NO_MOUTH: ':no_mouth:',
   SMILE: ':slightly_smiling_face:',
-  GRINNING: 'grinning',
+  GRINNING: ':grinning:',
   SOB: ':sob:',
 }
